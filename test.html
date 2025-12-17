@@ -98,54 +98,520 @@
 
   <script>
     const questions = [
-      // --- VŠETKY OTÁZKY (presne ako predtým) ---
-      {"question":"EPEC","options":["spôsobujú tzv. cestovateľské hnačky","spôsobujú infekcie malých detí do 1 roka","môžu byť príčinou nozokomiálnych nákaz"],"correct":[1,2]},
-      {"question":"Rotavírusy","options":["spôsobujú gastroenteritídy najmä u malých detí","spôsobujú respiračné ochorenia najmä u malých detí","infekčná dávka je nízka","po prekonaní ochorenia vzniká celoživotná imunita"],"correct":[0,2]},
-      {"question":"Pásomnica obyčajná spôsobuje","options":["echinokokózu","teniózu","zdroj nákazy pre človeka: hovädzí dobytok","zdroj nákazy pre človeka: ošípaná"],"correct":[1,3]},
-      {"question":"Medzi povinné očkovanie detí patrí očkovanie proti","options":["vírusovej hepatitíde A","detskej obrne","kiahňam","morbilám","chrípke","vírusovej hepatitíde B","Streptococcus pneumoniae"],"correct":[1,3,5]},
-      {"question":"Varicella – kiahne","options":["vírus patrí medzi herpetické vírusy","má inkubačnú dobu 2–4 dni","pôvodca spôsobuje pásový opar","voči infekcii sa povinne očkuje","vírus sa šíri kvapôčkovou infekciou"],"correct":[0,2,4]},
-      {"question":"Medzi betalaktámové antibiotiká patria","options":["cefotaxim","klindamycín","amoxycilín/klavulanát","meropenem","azitromycín","ciprofloxacín","gentamicín"],"correct":[0,2,3]},
-      {"question":"Ochorenie pityriasis versicolor","options":["spôsobuje kvasinka","spôsobuje vláknitá huba","prejavuje sa postihnutím nechtov","prejavuje sa depigmentáciou kože"],"correct":[0,3]},
-      {"question":"Salmonelóza","options":["môže spôsobiť aj extraintestinálne infekcie","infekčná dávka je vysoká","patrí medzi antropozoonózy","najčastejším sérotypom je Salmonella enteritidis"],"correct":[0,2,3]},
-      {"question":"Cytomegalovírus","options":["je ľudský herpesvírus 5","premorenosť populácie je nízka","infekcia v tehotenstve môže viesť k vrodeným vývojovým vadám","môže spôsobiť závažné komplikácie po transplantácii orgánov","k primoinfekcii dochádza už v detstve"],"correct":[0,2,3,4]},
-      {"question":"Šiesta detská choroba","options":["je vyvolaná parvovírusom B19","je vyvolaná herpetickým vírusom","patrí medzi exantematické ochorenia","postihuje staršie deti nad 2 roky","je tu 3 dňová horúčka"],"correct":[1,2,4]},
-      {"question":"Helicobacter pylori","options":["má vzťah k akútnej gastroenteritíde","k vredovej chorobe","k chronickej gastritíde","vyznačuje sa produkciou ureázy","diagnostikuje sa kultiváciou zo stolice"],"correct":[1,2,3]},
-      {"question":"Mycoplasma pneumoniae môže byť","options":["príčinou infekcií horných dýchacích ciest","je dobre citlivá na betalaktámové ATB","vyvoláva aj urogenitálne infekcie","môže kolonizovať sliznice bez príznakov infekcie","patrí medzi kultivačne nenáročné baktérie"],"correct":[0,2,3]},
-      {"question":"Hepatitída C","options":["voči infekcii sa očkuje","prenáša sa perorálne","často prechádza do chronickej formy","časté sú anikterické formy","ohrozuje zdravotníckych pracovníkov"],"correct":[2,3,4]},
-      {"question":"Pri infekcii močových ciest","options":["najčastejším vyvolávateľom je Escherichia coli","na kultivačné vyš. sa odoberá 1. prúd moča","je dôležité kvantitatívne hodnotenie bakteriúrie","na kultivačné vyš. sa odoberá 1. ranný moč"],"correct":[0,2,3]},
-      {"question":"Kvasinky","options":["sú mnohobunkové organizmy","spôsobujú vulvovaginitídu","môžu zapríčiniť aj systémové ochorenia","najčastejšou kvasinkou je Cryptococcus neoformans","najčastejšou kvasinkou je Candida albicans"],"correct":[1,2,4]},
-      {"question":"Chlamýdie sú pôvodcami","options":["atypickej pneumónie","infekcií urogenitálneho systému","inklúznej konjunktivitídy","psitakózy","ich diagnostika je kultivačná","infekcie sa liečia betalaktámovými antibiotikami"],"correct":[0,1,2]},
-      {"question":"Infekčná mononukleóza","options":["je vyvolaná EBV vírusom","diagnostikuje sa sérologicky","môže sa prejaviť aj hepatitídou","voči ochoreniu sa očkuje","prejavuje sa tonzilitídou"],"correct":[0,1,2,4]},
-      {"question":"Vírusová hepatitída A","options":["u detí často prebieha bezpríznakovo","má inkubačnú dobu 3 mesiace","má inkubačnú dobu 3 týždne","diagnostika och. spočíva v dôkaze protilátok anti HAV IgM","často prechádza do chronickej infekcie","prekonanie ochorenia zanecháva celoživotnú imunitu"],"correct":[0,2,3,5]},
-      {"question":"Mycobacterium tuberculosis","options":["baktéria sa farbí aj Gramom","baktéria sa farbí Ziehl-Neelsenom","baktéria sa kultivuje 3–4 týždne","lab. diagnostika ochorenia je sérologická","baktéria je odolná voči vonkajším vplyvom"],"correct":[1,2,4]},
-      {"question":"Vírusová hepatitída B","options":["prenáša sa fekálne-orálnou cestou","pri aktívnej infekcii je v krvi prítomný HBsAg","môže viesť k rozvoju hepatocelulárneho karcinómu","očkovanie patrí k povinným","má inkubačnú dobu 3 týždne"],"correct":[1,2,3]},
-      {"question":"Najčastejšími helmintózami u nás sú","options":["Aspergilóza","Enterobióza","Toxoplazmóza","Askaridóza","Giardióza"],"correct":[1,3]},
-      {"question":"Legionárska choroba","options":["môže sa vyskytnúť u imunitne oslabených","prejavuje sa akútnymi hnačkami","prejavuje sa zápalom pľúc","na liečbu sa používajú betalaktámové ATB","diagnostikuje sa dôkazom antigénu v moči"],"correct":[0,2,4]},
-      {"question":"Lymska borrelióza","options":["najčastejšia je kožná forma","patrí medzi transmizívne nákazy","jej diagnostika je hlavne sérologická","voči ochoreniu máme očkovaciu látku","môže sa prejaviť postihnutím kĺbov"],"correct":[0,1,2,4]},
-      {"question":"Oportúnne patogény","options":["často ide o endogénnu flóru","často sú pôvodcami nozokomiálnych nákaz","vyznačujú sa vysokou virulenciou","infikujú ľudí so zníženou imunitou"],"correct":[0,1,3]},
-      {"question":"Odber krvi na hemokultiváciu sa uskutočňuje","options":["v objeme 5–10 ml","na vrchole teplotnej krivky","na začiatku vzostupu teploty, triašky","odobratá hemokultúra sa skladuje v chladničke"],"correct":[0,2]},
-      {"question":"Trichomoniáza","options":["je vyvolaná prvokom","je vyvolaná baktériou Gardnerella vaginalis","u mužov prebieha často asymptomaticky","diagnostikuje sa mikroskopicky"],"correct":[0,2,3]},
-      {"question":"Medzi pasívnu imunitu zaradzujeme","options":["materské protilátky prenesené cez placenta","očkovanie","podanie tetanického gamaglobulínu","imunitu po prekonaní inf. ochorenia"],"correct":[0,2]},
-      {"question":"Alimentárne enterotoxikózy","options":["majú inkubačnú dobu 3–4 hodiny","majú inkubačnú dobu 3–4 dni","sú sprevádzané teplotami","odznejú do 24 hodín","ich toxíny sú väčšinou termostabilné"],"correct":[0,3,4]},
-      {"question":"Pasteurelóza","options":["patrí medzi zoonózy","človek sa nakazí inhalačnou cestou","človek sa nakazí pohryznutím mačkou, psom"],"correct":[0,2]},
-      {"question":"Botulizmus","options":["je vyvolaný anaeróbnou nesporulujúcou baktériou","je vyvolaný anaeróbnou sporulujúcou baktériou","patrí medzi alimentárne enterotoxikózy","liečba spočíva v pasívnej imunizácii","prejavuje sa spazmami svalov"],"correct":[1,3]},
-      {"question":"Clostridium difficile","options":["patrí medzi G+ sporulujúce anaeróbne baktérie","je najčastejšou príčinou nozokomiálnych hnačiek","môže byť aj súčasťou črevnej flóry človeka","spôsobuje plynatú snet'","infekcia sa často objavuje po podávaní širokospektr. ATB","môže spôsobiť aj paralytický ileus"],"correct":[0,1,2,4,5]},
-      {"question":"Ochorenie AIDS","options":["je vyvolané dvoma typmi vírusu","postihuje iba ľudí s oslabenou imunitou","môže mať inkubačnú dobu aj niekoľko rokov","vírus infikuje najmä B lymfocyty","protilátky sa dajú dokázať najskôr po 3 týždňoch od infikovania"],"correct":[0,2,4]},
-      {"question":"Osýpky","options":["sú vyvolané odolným vírusom","infekcia má na organizmus výrazný imunosupresívny účinok","ochorenie je sprevádzané lymfocytopéniou","očkuje sa od 3. mesiaca života"],"correct":[1,2]},
-      {"question":"Pre akútnu (práve prebiehajúcu) infekciu svedčí dôkaz protilátok triedy","options":["IgG","IgM","IgA","IgD"],"correct":[1]},
-      {"question":"G– baktérie","options":["sú v mikroskope modré","sú v mikroskope ružové","môžu spôsobiť endotoxínový šok","patrí k nim aj Neisseria meningitidis"],"correct":[1,2,3]},
-      {"question":"Enterovírusy môžu spôsobiť","options":["detskú obrnu","aseptickú meningitídu","letnú chrípku","akútnu gastroenteritídu","herpangínu"],"correct":[0,1,2,4]},
-      {"question":"Šigelóza – bacilárna úplavica","options":["často je sprevádzaná krvavými hnačkami","patrí medzi choroby „špinavých rúk“","zdrojom nákazy sú aj hlodavce a hydina","zdrojom nákazy je iba človek"],"correct":[0,1,3]},
-      {"question":"Besnota je","options":["Lyssa","ochorenie je sprevádzané virémiou","vírus sa množí v slinných žľazách","očkujú sa iba zvieratá"],"correct":[0,2]},
-      {"question":"Medzi vírusy, ktoré spôsobujú exantém patria","options":["RS vírus","coxsackievirus A16","rotavírusy","vírus morbíl","vírus varicella-zoster","herpes vírus HHV-6"],"correct":[1,3,4,5]},
-      {"question":"Staphylococcus aureus môže vyvolať","options":["môže byť nosičským kmeňom na slizniciach a koži","infekcie kože","šarlah","toxickú epidermálnu nekrolýzu","nozokomiálne infekcie"],"correct":[0,1,3,4]},
-      {"question":"Kvasinky","options":["sú mnohobunkové organizmy","spôsobujú vulvovaginitídu","môžu zapríčiniť aj systémové ochorenia","najčastejšou kvasinkou je Cryptococcus neoformans","najčastejšou kvasinkou je Candida albicans"],"correct":[1,2,4]},
-      {"question":"Neisseria meningitidis","options":["môže sa vyskytovať ako nosičský kmeň na sliznici dýchacích ciest","baktéria sa vyskytuje v jednom sérotype","môže spôsobiť septický šok","voči infekcii máme povinné očkovanie","patrí medzi kultivačne náročné baktérie"],"correct":[0,2,4]},
-      {"question":"Medzi povinné očkovanie detí patrí očkovanie proti","options":["vírusovej hepatitíde A","detskej obrne","kiahňam","morbilám","chrípke","vírusovej hepatitíde B","Streptococcus pneumoniae","kliešťovej encefalitíde","tuberkulóze"],"correct":[1,3,5,7,8]},
-      {"question":"Clostridium difficile","options":["patrí medzi G+ sporulujúce anaeróbne baktérie","je najčastejšou príčinou nozokomiálnych hnačiek","môže byť aj súčasťou črevnej flóry človeka","spôsobuje plynatú snet'","infekcia sa často objavuje po podávaní širokospektr. ATB","môže spôsobiť aj paralytický ileus"],"correct":[0,1,2,4,5]},
-      {"question":"Pri infekcii močových ciest","options":["najčastejším vyvolávateľom je Escherichia coli","na kultivačné vyš. sa odoberá 1. prúd moča","je dôležité kvantitatívne hodnotenie bakteriúrie","na kultivačné vyš. sa odoberá 1. ranný moč"],"correct":[0,2,3]}
-    ];
-
+  {
+    "question": "EPEC",
+    "options": [
+      "spôsobujú tzv. cestovateľské hnačky",
+      "spôsobujú infekcie malých detí do 1 roka",
+      "môžu byť príčinou nozokomiálnych nákaz"
+    ],
+    "correct": [1, 2]
+  },
+  {
+    "question": "Rotavírusy",
+    "options": [
+      "spôsobujú gastroenteritídy najmä u malých detí",
+      "spôsobujú respiračné ochorenia najmä u malých detí",
+      "infekčná dávka je nízka",
+      "po prekonaní ochorenia vzniká celoživotná imunita"
+    ],
+    "correct": [0, 2]
+  },
+  {
+    "question": "Pásomnica obyčajná spôsobuje",
+    "options": [
+      "echinokokózu",
+      "teniózu",
+      "zdroj nákazy pre človeka: hovädzí dobytok",
+      "zdroj nákazy pre človeka: ošípaná"
+    ],
+    "correct": [1, 2]
+  },
+  {
+    "question": "Medzi povinné očkovanie detí patrí očkovanie proti",
+    "options": [
+      "vírusovej hepatitíde A",
+      "detskej obrne",
+      "kiahňam",
+      "morbilám",
+      "chrípke",
+      "vírusovej hepatitíde B",
+      "Streptococcus pneumoniae"
+    ],
+    "correct": [1, 3, 5, 6]
+  },
+  {
+    "question": "Varicella – kiahne",
+    "options": [
+      "vírus patrí medzi herpetické vírusy",
+      "má inkubačnú dobu 2–4 dni",
+      "pôvodca spôsobuje pásový opar",
+      "voči infekcii sa povinne očkuje",
+      "vírus sa šíri kvapôčkovou infekciou"
+    ],
+    "correct": [0, 2, 4]
+  },
+  {
+    "question": "Medzi betalaktámové antibiotiká patria",
+    "options": [
+      "cefotaxim",
+      "klindamycín",
+      "amoxycilín/klavulanát",
+      "meropenem",
+      "azitromycín",
+      "ciprofloxacín",
+      "gentamicín"
+    ],
+    "correct": [0, 2, 3]
+  },
+  {
+    "question": "Ochorenie pityriasis versicolor",
+    "options": [
+      "spôsobuje kvasinka",
+      "spôsobuje vláknitá huba",
+      "prejavuje sa postihnutím nechtov",
+      "prejavuje sa depigmentáciou kože"
+    ],
+    "correct": [0, 3]
+  },
+  {
+    "question": "Salmonelóza",
+    "options": [
+      "môže spôsobiť aj extraintestinálne infekcie",
+      "infekčná dávka je vysoká",
+      "patrí medzi antropozoonózy",
+      "najčastejším sérotypom je Salmonella enteritidis"
+    ],
+    "correct": [0, 2, 3]
+  },
+  {
+    "question": "Cytomegalovírus",
+    "options": [
+      "je ľudský herpesvírus 5",
+      "premorenosť populácie je nízka",
+      "infekcia v tehotenstve môže viesť k vrodeným vývojovým vadám",
+      "môže spôsobiť závažné komplikácie po transplantácii orgánov",
+      "k primoinfekcii dochádza už v detstve"
+    ],
+    "correct": [0, 2, 3, 4]
+  },
+  {
+    "question": "Šiesta detská choroba",
+    "options": [
+      "je vyvolaná parvovírusom B19",
+      "je vyvolaná herpetickým vírusom",
+      "patrí medzi exantematické ochorenia",
+      "postihuje staršie deti nad 2 roky",
+      "je tu 3 dňová horúčka"
+    ],
+    "correct": [1, 2, 4]
+  },
+  {
+    "question": "Helicobacter pylori",
+    "options": [
+      "má vzťah k akútnej gastroenteritíde",
+      "k vredovej chorobe",
+      "k chronickej gastritíde",
+      "vyznačuje sa produkciou ureázy",
+      "diagnostikuje sa kultiváciou zo stolice"
+    ],
+    "correct": [1, 2, 3]
+  },
+  {
+    "question": "Mycoplasma pneumoniae môže byť",
+    "options": [
+      "príčinou infekcií horných dýchacích ciest",
+      "je dobre citlivá na betalaktámové ATB",
+      "vyvoláva aj urogenitálne infekcie",
+      "môže kolonizovať sliznice bez príznakov infekcie",
+      "patrí medzi kultivačne nenáročné baktérie"
+    ],
+    "correct": [0, 3]
+  },
+  {
+    "question": "Hepatitída C",
+    "options": [
+      "voči infekcii sa očkuje",
+      "prenáša sa perorálne",
+      "často prechádza do chronickej formy",
+      "časté sú anikterické formy",
+      "ohrozuje zdravotníckych pracovníkov"
+    ],
+    "correct": [2, 3, 4]
+  },
+  {
+    "question": "Pri infekcii močových ciest",
+    "options": [
+      "najčastejším vyvolávateľom je Escherichia coli",
+      "na kultivačné vyš. sa odoberá 1. prúd moča",
+      "je dôležité kvantitatívne hodnotenie bakteriúrie",
+      "na kultivačné vyš. sa odoberá 1. ranný moč"
+    ],
+    "correct": [0, 2, 3]
+  },
+  {
+    "question": "Kvasinky",
+    "options": [
+      "sú mnohobunkové organizmy",
+      "spôsobujú vulvovaginitídu",
+      "môžu zapríčiniť aj systémové ochorenia",
+      "najčastejšou kvasinkou je Cryptococcus neoformans",
+      "najčastejšou kvasinkou je Candida albicans"
+    ],
+    "correct": [1, 2, 4]
+  },
+  {
+    "question": "Chlamýdie sú pôvodcami",
+    "options": [
+      "atypickej pneumónie",
+      "infekcií urogenitálneho systému",
+      "inklúznej konjunktivitídy",
+      "psitakózy",
+      "ich diagnostika je kultivačná",
+      "infekcie sa liečia betalaktámovými antibiotikami"
+    ],
+    "correct": [0, 1, 2, 3]
+  },
+  {
+    "question": "Infekčná mononukleóza",
+    "options": [
+      "je vyvolaná EBV vírusom",
+      "diagnostikuje sa sérologicky",
+      "môže sa prejaviť aj hepatitídou",
+      "voči ochoreniu sa očkuje",
+      "prejavuje sa tonzilitídou"
+    ],
+    "correct": [0, 1, 2, 4]
+  },
+  {
+    "question": "Vírusová hepatitída A",
+    "options": [
+      "u detí často prebieha bezpríznakovo",
+      "má inkubačnú dobu 3 mesiace",
+      "má inkubačnú dobu 3 týždne",
+      "diagnostika och. spočíva v dôkaze protilátok anti HAV IgM",
+      "často prechádza do chronickej infekcie",
+      "prekonanie ochorenia zanecháva celoživotnú imunitu"
+    ],
+    "correct": [0, 2, 3, 5]
+  },
+  {
+    "question": "Mycobacterium tuberculosis",
+    "options": [
+      "baktéria sa farbí aj Gramom",
+      "baktéria sa farbí Ziehl-Neelsenom",
+      "baktéria sa kultivuje 3–4 týždne",
+      "lab. diagnostika ochorenia je sérologická",
+      "baktéria je odolná voči vonkajším vplyvom"
+    ],
+    "correct": [1, 4]
+  },
+  {
+    "question": "Vírusová hepatitída B",
+    "options": [
+      "prenáša sa fekálne-orálnou cestou",
+      "pri aktívnej infekcii je v krvi prítomný HBsAg",
+      "môže viesť k rozvoju hepatocelulárneho karcinómu",
+      "očkovanie patrí k povinným",
+      "má inkubačnú dobu 3 týždne"
+    ],
+    "correct": [1, 2, 3]
+  },
+  {
+    "question": "Najčastejšími helmintózami u nás sú",
+    "options": [
+      "Aspergilóza",
+      "Enterobióza",
+      "Toxoplazmóza",
+      "Askaridóza",
+      "Giardióza"
+    ],
+    "correct": [1, 3]
+  },
+  {
+    "question": "Legionárska choroba",
+    "options": [
+      "môže sa vyskytnúť u imunitne oslabených",
+      "prejavuje sa akútnymi hnačkami",
+      "prejavuje sa zápalom pľúc",
+      "na liečbu sa používajú betalaktámové ATB",
+      "diagnostikuje sa dôkazom antigénu v moči"
+    ],
+    "correct": [0, 2, 4]
+  },
+  {
+    "question": "Lymska borrelióza",
+    "options": [
+      "najčastejšia je kožná forma",
+      "patrí medzi transmizívne nákazy",
+      "jej diagnostika je hlavne sérologická",
+      "voči ochoreniu máme očkovaciu látku",
+      "môže sa prejaviť postihnutím kĺbov"
+    ],
+    "correct": [0, 1, 2, 4]
+  },
+  {
+    "question": "Oportúnne patogény",
+    "options": [
+      "často ide o endogénnu flóru",
+      "často sú pôvodcami nozokomiálnych nákaz",
+      "vyznačujú sa vysokou virulenciou",
+      "infikujú ľudí so zníženou imunitou"
+    ],
+    "correct": [0, 1, 3]
+  },
+  {
+    "question": "Odber krvi na hemokultiváciu sa uskutočňuje",
+    "options": [
+      "v objeme 5–10 ml",
+      "na vrchole teplotnej krivky",
+      "na začiatku vzostupu teploty, triašky",
+      "odobratá hemokultúra sa skladuje v chladničke"
+    ],
+    "correct": [0, 2]
+  },
+  {
+    "question": "Trichomoniáza",
+    "options": [
+      "je vyvolaná prvokom",
+      "je vyvolaná baktériou Gardnerella vaginalis",
+      "u mužov prebieha často asymptomaticky",
+      "diagnostikuje sa mikroskopicky"
+    ],
+    "correct": [0, 2, 3]
+  },
+  {
+    "question": "Medzi pasívnu imunitu zaradzujeme",
+    "options": [
+      "materské protilátky prenesené cez placenta",
+      "očkovanie",
+      "podanie tetanického gamaglobulínu",
+      "imunitu po prekonaní inf. ochorenia"
+    ],
+    "correct": [0, 2]
+  },
+  {
+    "question": "Alimentárne enterotoxikózy",
+    "options": [
+      "majú inkubačnú dobu 3–4 hodiny",
+      "majú inkubačnú dobu 3–4 dni",
+      "sú sprevádzané teplotami",
+      "odznejú do 24 hodín",
+      "ich toxíny sú väčšinou termostabilné"
+    ],
+    "correct": [0, 3, 4]
+  },
+  {
+    "question": "Pasteurelóza",
+    "options": [
+      "patrí medzi zoonózy",
+      "človek sa nakazí inhalačnou cestou",
+      "človek sa nakazí pohryznutím mačkou, psom"
+    ],
+    "correct": [0, 2]
+  },
+  {
+    "question": "Botulizmus",
+    "options": [
+      "je vyvolaný anaeróbnou nesporulujúcou baktériou",
+      "je vyvolaný anaeróbnou sporulujúcou baktériou",
+      "patrí medzi alimentárne enterotoxikózy",
+      "liečba spočíva v pasívnej imunizácii",
+      "prejavuje sa spazmami svalov"
+    ],
+    "correct": [1, 2, 3]
+  },
+  {
+    "question": "Clostridium difficile",
+    "options": [
+      "patrí medzi G+ sporulujúce anaeróbne baktérie",
+      "je najčastejšou príčinou nozokomiálnych hnačiek",
+      "môže byť aj súčasťou črevnej flóry človeka",
+      "spôsobuje plynatú snet'",
+      "infekcia sa často objavuje po podávaní širokospektr. ATB",
+      "môže spôsobiť aj paralytický ileus"
+    ],
+    "correct": [0, 1, 2, 4, 5]
+  },
+  {
+    "question": "Ochorenie AIDS",
+    "options": [
+      "je vyvolané dvoma typmi vírusu",
+      "postihuje iba ľudí s oslabenou imunitou",
+      "môže mať inkubačnú dobu aj niekoľko rokov",
+      "vírus infikuje najmä B lymfocyty",
+      "protilátky sa dajú dokázať najskôr po 3 týždňoch od infikovania"
+    ],
+    "correct": [0, 2, 4]
+  },
+  {
+    "question": "Osýpky",
+    "options": [
+      "sú vyvolané odolným vírusom",
+      "infekcia má na organizmus výrazný imunosupresívny účinok",
+      "ochorenie je sprevádzané lymfocytopéniou",
+      "očkuje sa od 3. mesiaca života"
+    ],
+    "correct": [1, 2]
+  },
+  {
+    "question": "Pre akútnu (práve prebiehajúcu) infekciu svedčí dôkaz protilátok triedy",
+    "options": [
+      "IgG",
+      "IgM",
+      "IgA",
+      "IgD"
+    ],
+    "correct": [1]
+  },
+  {
+    "question": "G– baktérie",
+    "options": [
+      "sú v mikroskope modré",
+      "sú v mikroskope ružové",
+      "môžu spôsobiť endotoxínový šok",
+      "patrí k nim aj Neisseria meningitidis"
+    ],
+    "correct": [1, 2, 3]
+  },
+  {
+    "question": "Enterovírusy môžu spôsobiť",
+    "options": [
+      "detskú obrnu",
+      "aseptickú meningitídu",
+      "letnú chrípku",
+      "akútnu gastroenteritídu",
+      "herpangínu"
+    ],
+    "correct": [0, 1, 2, 4]
+  },
+  {
+    "question": "Šigelóza – bacilárna úplavica",
+    "options": [
+      "často je sprevádzaná krvavými hnačkami",
+      "patrí medzi choroby „špinavých rúk“",
+      "zdrojom nákazy sú aj hlodavce a hydina",
+      "zdrojom nákazy je iba človek"
+    ],
+    "correct": [0, 1, 3]
+  },
+  {
+    "question": "Besnota je",
+    "options": [
+      "Lyssa",
+      "ochorenie je sprevádzané virémiou",
+      "vírus sa množí v slinných žľazách",
+      "očkujú sa iba zvieratá"
+    ],
+    "correct": [0, 2]
+  },
+  {
+    "question": "Medzi vírusy, ktoré spôsobujú exantém patria",
+    "options": [
+      "RS vírus",
+      "coxsackievirus A16",
+      "rotavírusy",
+      "vírus morbíl",
+      "vírus varicella-zoster",
+      "herpes vírus HHV-6"
+    ],
+    "correct": [1, 3, 4, 5]
+  },
+  {
+    "question": "Staphylococcus aureus môže vyvolať",
+    "options": [
+      "môže byť nosičským kmeňom na slizniciach a koži",
+      "infekcie kože",
+      "šarlah",
+      "toxickú epidermálnu nekrolýzu",
+      "nozokomiálne infekcie"
+    ],
+    "correct": [0, 1, 3, 4]
+  },
+  {
+    "question": "Kvasinky",
+    "options": [
+      "sú mnohobunkové organizmy",
+      "spôsobujú vulvovaginitídu",
+      "môžu zapríčiniť aj systémové ochorenia",
+      "najčastejšou kvasinkou je Cryptococcus neoformans",
+      "najčastejšou kvasinkou je Candida albicans"
+    ],
+    "correct": [1, 2, 4]
+  },
+  {
+    "question": "Neisseria meningitidis",
+    "options": [
+      "môže sa vyskytovať ako nosičský kmeň na sliznici dýchacích ciest",
+      "baktéria sa vyskytuje v jednom sérotype",
+      "môže spôsobiť septický šok",
+      "voči infekcii máme povinné očkovanie",
+      "patrí medzi kultivačne náročné baktérie"
+    ],
+    "correct": [0, 2, 4]
+  },
+  {
+    "question": "Medzi povinné očkovanie detí patrí očkovanie proti",
+    "options": [
+      "vírusovej hepatitíde A",
+      "detskej obrne",
+      "kiahňam",
+      "morbilám",
+      "chrípke",
+      "vírusovej hepatitíde B",
+      "Streptococcus pneumoniae",
+      "kliešťovej encefalitíde",
+      "tuberkulóze"
+    ],
+    "correct": [1, 3, 5, 6]
+  },
+  {
+    "question": "Clostridium difficile",
+    "options": [
+      "patrí medzi G+ sporulujúce anaeróbne baktérie",
+      "je najčastejšou príčinou nozokomiálnych hnačiek",
+      "môže byť aj súčasťou črevnej flóry človeka",
+      "spôsobuje plynatú snet'",
+      "infekcia sa často objavuje po podávaní širokospektr. ATB",
+      "môže spôsobiť aj paralytický ileus"
+    ],
+    "correct": [0, 1, 2, 4, 5]
+  },
+  {
+    "question": "Pri infekcii močových ciest",
+    "options": [
+      "najčastejším vyvolávateľom je Escherichia coli",
+      "na kultivačné vyš. sa odoberá 1. prúd moča",
+      "je dôležité kvantitatívne hodnotenie bakteriúrie",
+      "na kultivačné vyš. sa odoberá 1. ranný moč"
+    ],
+    "correct": [0, 2, 3]
+  },
+  {
+    "question": "Syfilis je vyvolaný",
+    "options": [
+      "chlamydia trachomatis",
+      "treponema pallidum",
+      "diagnostika je kultivačna",
+      "diagnostika je serologicka – nespecificke a specificke testy",
+      "infekcia v tehotenstve moze sposobit vrodene vady",
+      "infekcia sa moze prejavit aj po rokoch od infikovania"
+    ],
+    "correct": [1, 3, 4, 5]
+  },
+  {
+    "question": "Reumatická horúčka",
+    "options": [
+      "patri medzi postinfekcne komplikacie infekcii vyvolanych Streptococcus pneumoniae",
+      "to iste len Streptococcus pyogenes",
+      "moze sa prejavit glomerulonefritidou",
+      "moze sa prejavit artritidou",
+      "endokarditidou",
+      "pri podozreni sa vysetruje ASLO"
+    ],
+    "correct": [1, 3, 4, 5]
+  }
+];
     const quizContainer = document.getElementById('quiz');
     const resultContainer = document.getElementById('result');
 
